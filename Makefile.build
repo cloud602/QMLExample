@@ -1,0 +1,20 @@
+-include ../../../../config.mk
+
+PLATFORM_DEFINE ?= "Platform_$(PLATFORM)"
+
+QTPRO_FILE=QMLExample.pro
+
+all: release
+
+qmake : $(QTPRO_FILE)
+	. $(ENV_SETUP); \
+	qmake2 CONFIG+=release QMAKE_CXXFLAGS_RELEASE+=-D$(PLATFORM_DEFINE) $(QTPRO_FILE)
+
+release : qmake
+	@. $(ENV_SETUP); \
+	make -f Makefile
+
+clean : $(SOURCES) qmake
+	@. $(ENV_SETUP); \
+	make -f Makefile distclean
+
