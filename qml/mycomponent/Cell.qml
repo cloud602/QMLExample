@@ -1,9 +1,11 @@
 
 import QtQuick 1.0
 
+// NOTE: "Item" is the most basic virtual emelemt of in 
+//       QML and is used as a container for other elements.
 Item {
     id: container
-    property alias cellColor: rectangle.color
+    property alias cellColor: rectangle.color  
     signal clicked(color cellColor)
 
     width: 50; height:50
