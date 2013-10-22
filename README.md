@@ -1,12 +1,4 @@
-A Simple Qt QML Example Application
-===================================
+QMLExample
+==========
 
-This is a simple Qt QML example that based on QML tutorial.
-
-Includes:
- * QML basic concept
- * QML works with C++ class
- * Resourece management
- * Custom QML component.
-
-
+A simple QML example application
