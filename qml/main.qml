@@ -3,8 +3,8 @@ import QtQuick 1.1
 import "mycomponent"
 
 Rectangle {
-    width: 480
-    height: 640
+    width: 450
+    height: 450
     color: "lightgray"
 
     Column
@@ -19,6 +19,37 @@ Rectangle {
             text: qsTr("Hello World")
             font.pointSize: 24
             font.bold: true
+
+            MouseArea { 
+                id: mouseArea; 
+                anchors.fill: parent 
+            }
+
+            states: State { 
+                name: "down"; 
+                when: mouseArea.pressed == true
+                PropertyChanges { 
+                    target: helloText; 
+                    y: 220; 
+                    rotation: 360; 
+                    color: "red" 
+                }
+            }
+
+            transitions: Transition {
+                from: ""; to: "down"; reversible: true
+                ParallelAnimation {
+                    NumberAnimation { 
+                        properties: "y,rotation"
+                        duration: 500
+                        easing.type: Easing.InOutQuad
+                    }
+                    ColorAnimation {
+                        duration: 500
+                    }
+                }
+            }
+                
         }
         
         Row {
