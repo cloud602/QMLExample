@@ -13,7 +13,11 @@ Rectangle {
 
         Text {
             id:helloText
+            anchors.horizontalCenter: parent.horizontalCenter
+            y: 10
             text: qsTr("Hello World")
+            font.pointSize: 24
+            font.bold: true
         }
         
         Row {
