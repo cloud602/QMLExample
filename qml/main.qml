@@ -3,8 +3,9 @@ import QtQuick 1.1
 import "mycomponent"
 
 Rectangle {
-    width: 240
-    height: 320
+    width: 480
+    height: 640
+    color: "lightgray"
 
     Column
     {

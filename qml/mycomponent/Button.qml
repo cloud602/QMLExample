@@ -6,6 +6,7 @@ Rectangle {
 
     signal clicked
 
+    anchors.horizontalCenter: parent.horizontalCenter
     width: 170; height: 50
     border.width: 1
     radius: 5
